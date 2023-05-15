@@ -10,9 +10,13 @@
 <body>
     <div id="app">
     
-        <div v-if="saudacao">
+        <template v-if="saudacao">
             <h1>Boas vindas</h1>
             <p>Conteúdo da tag <strong>template</strong></p>
+        </template>
+        <div v-for="n in 10">
+            <p></p>
+
         </div>
         
     </div>

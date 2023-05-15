@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- <input type="text" v-bind:value="paciente" v-on:keyup="setPaciente($event)"> -->
+    
+        <input type="text" v-model="paciente">
+
+        <input type="radio" value="f" v-model="sexo">Feminismo
+        <input type="radio" value="m" v-model="sexo">Masculino
+        <br>{{ sexo }}
+
+        <select v-model="plano">
+            <option value="" disabled>Selecione um Plano</option>
+            <option value="1">Básico 1</option>
+            <option value="2">Básico 2</option>
+            <option value="3">Master</option>
+        </select> 
+        <br>{{ plano }}
+    
+    </div>
+
+    <script>
+
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                paciente: 'Joao da Svilva',
+                sexo: '',
+                plano: '',
+                doencas: [],
+                diagnostico: ''
+            },
+            methods: {
+                // setPaciente(e) {
+                //     this.paciente = e.target.value
+                // }                       
+            },
+            computed: {}
+        })
+
+    </script>
+</body>
+</html>
