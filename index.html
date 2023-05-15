@@ -4,46 +4,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="vue.js"></script>
-    <title>Vue-JS</title>
+    <script src="./vue.js"></script>
+    <title>Document</title>
 </head>
 <body>
-    
-<div id ="app">
-    <a> </a>
-</div>
+    <div id="app">
+        {{ somar() }}<br>
+        {{ subtrair() }}<br>
+        {{ multiplicar() }}<br>
+        {{ dividir() }}<br>
+    </div>
 
+    <script>
 
-<script>
-
-    
-
-   const vm = new Vue({
-        el: '#app', // # para selecionar como ID e . para selecionar por class
-        data: {
-            n1: 10,
-            n2: 5
-        },
-        methods: {
-            somar: function somar () { //convencional
-                return this.n1 + this.n2;
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                n1: 10,
+                n2: 5
             },
-            subtrair: function () { // anonima
-                return 4 - 2;
-            },
-            multiplicar: () => { //arrow
-                return 4 * 2;
-            },
-            dividir() { // forma mais enxuta 
-                return 4 / 2;
+            methods: {
+                somar: function somar() { //convencional
+                    return this.n1 + this.n2;
+                },
+                subtrair: function() { //anônima
+                    return this.n1 - this.n2;
+                },
+                multiplicar: () => { //arrow function
+                    return this.n1 * this.n2; //contexto léxico
+                },
+                dividir() { //forma enxuta de definir os pares de chave/valor
+                    return this.n1 / this.n2;
+                }                        
             }
+        })
 
-        }
-   }); //vM = viewModel
-
-
-
-</script>
-
+    </script>
 </body>
 </html>
